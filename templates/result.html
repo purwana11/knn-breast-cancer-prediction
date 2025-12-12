@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Prediksi</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+<div class="bg-gradient"></div>
+<div class="container">
+    <header class="header">
+        <div>
+            <p class="eyebrow">KNN MODEL</p>
+            <h1>Hasil Prediksi</h1>
+            <p class="subtitle">Diagnosis dari model KNN. Gunakan sebagai dukungan keputusan klinis.</p>
+        </div>
+    </header>
+
+    <section class="layout">
+        <div class="card">
+            <div class="result highlight">
+                <p><strong>Diagnosis:</strong> {{ hasil }}</p>
+                <p class="subtitle">Pastikan dikonfirmasi dengan temuan klinis dan imaging terkait.</p>
+            </div>
+
+            <div class="pill-row">
+                <span class="chip chip-info">Model: KNN</span>
+                <span class="chip chip-soft">30 fitur terstandardisasi</span>
+                <span class="chip chip-soft">Inferensi lokal</span>
+            </div>
+
+            <div class="actions-inline">
+                <a href="/" class="btn-primary">Kembali ke Halaman Utama</a>
+                <a href="/" class="btn-ghost">Input ulang</a>
+            </div>
+        </div>
+
+        <aside class="card info-card">
+            <p class="eyebrow">Protokol Klinik</p>
+            <ul class="checklist">
+                <li>Gunakan hasil sebagai pendukung, bukan pengganti keputusan dokter.</li>
+                <li>Verifikasi dengan pemeriksaan imaging, histopatologi, dan riwayat pasien.</li>
+                <li>Pastikan pengisian fitur sesuai satuan dan standar laboratorium.</li>
+            </ul>
+            <div class="note">
+                <strong>Disclaimers:</strong> Tidak menyimpan data; sesuai untuk pemakaian internal rumah sakit.
+            </div>
+        </aside>
+    </section>
+</div>
+
+</body>
+</html>

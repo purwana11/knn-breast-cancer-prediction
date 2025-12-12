@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNN Breast Cancer Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="bg-gradient"></div>
+<div class="container">
+
+    <header class="header">
+        <div class="header-text">
+            <p class="eyebrow">KNN MODEL</p>
+            <h1>Prediksi Kanker Payudara</h1>
+            <p class="subtitle">Antarmuka klinis untuk tenaga medis rumah sakit: validasi cepat hasil model KNN dengan data fitur klinis terstandardisasi.</p>
+        </div>
+        <div class="badge-group">
+            <span class="badge">House of Care</span>
+            <span class="badge badge-soft">Internal Use</span>
+        </div>
+    </header>
+
+    <div class="trust-row">
+        <div class="trust-item">
+            <span class="dot dot-green"></span>
+            <p>Data tidak disimpan ke server; hanya dipakai untuk inferensi.</p>
+        </div>
+        <div class="trust-item">
+            <span class="dot dot-blue"></span>
+            <p>Optimasi untuk input cepat di lingkungan klinis.</p>
+        </div>
+    </div>
+
+    <div class="layout">
+        <aside class="card info-card">
+            <p class="eyebrow">Ringkasan Model</p>
+            <h3>KNN untuk Kanker Payudara</h3>
+            <p class="subtitle">Model K-Nearest Neighbors yang dilatih pada dataset Breast Cancer Wisconsin untuk memisahkan benign dan malignant.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <p class="stat-label">Akurasi Validasi</p>
+                    <p class="stat-value">~97%</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Jumlah Fitur</p>
+                    <p class="stat-value">30</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Algoritma</p>
+                    <p class="stat-value">KNN</p>
+                </div>
+            </div>
+
+            <ul class="checklist">
+                <li>Gunakan nilai numerik sesuai satuan aslinya.</li>
+                <li>Pastikan tidak ada kolom yang kosong.</li>
+                <li>Tekan “Isi otomatis” untuk contoh pengisian cepat.</li>
+            </ul>
+
+            <div class="note">
+                <strong>Catatan klinis:</strong> Hasil model bersifat pendukung, keputusan akhir tetap pada dokter penanggung jawab.
+            </div>
+        </aside>
+
+        <form action="/predict" method="POST" class="card form-card">
+            <div class="form-head">
+                <div>
+                    <p class="eyebrow">Form Input</p>
+                    <h3>Data Fitur Klinis</h3>
+                    <p class="subtitle">Isi 30 fitur atau gunakan data contoh untuk simulasi.</p>
+                </div>
+                <div class="cta-group">
+                    <button type="button" id="autoFillBtn" class="btn-secondary">Isi otomatis (Benign)</button>
+                    <button type="button" id="autoFillMalBtn" class="btn-secondary btn-secondary-alt">Isi otomatis (Ganas)</button>
+                    <button type="button" id="resetBtn" class="btn-ghost">Reset</button>
+                </div>
+            </div>
+
+            <div class="form-toolbar">
+                <span class="chip chip-info">Real-time validation</span>
+                <span class="chip chip-soft">Mode aman — data tidak disimpan</span>
+            </div>
+
+            <div id="featureGrid" class="grid"></div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Prediksi</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+<script src="/static/script.js" defer></script>
+</body>
+</html>
